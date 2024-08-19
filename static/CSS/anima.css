@@ -1,0 +1,11 @@
+table{width:50%;
+background:white;
+border: 2px white;
+}
+
+a.menumexa{color:black;
+font-size:50px;
+text-decoration:none
+}
+a.menumexa:hover{color:grey;
+text-decoration:none}

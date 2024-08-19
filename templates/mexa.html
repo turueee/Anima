@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="{{url_for('static',filename='CSS/mexa.css')}}" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Аниме жанра меха</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><a class = 'menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
+    </tr>
+</table>
+<div class="out">
+     <div class="in">
+    <center><h1>Аниме жанра меха</h1></center>
+    {% for rusname in names -%}
+    <center><h2><a class='names' href = {{url_for(names[rusname])}}>{{rusname}}</a></h2></center>
+    {% endfor -%}
+     </div>
+</div>
+</body>
+</html>

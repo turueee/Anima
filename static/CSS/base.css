@@ -1,0 +1,33 @@
+table.hat{width:50%;
+background:white;
+border: 2px white;
+}
+
+a.menumexa{color:black;
+font-size:50px;
+text-decoration:none
+}
+a.menumexa:hover{color:grey;
+text-decoration:none}
+
+h1{color:white;
+   font-size:100px;
+   }
+
+body{
+	 background-image: linear-gradient(to right,#00FFFF,#b60aff,red);
+	 color:transparent;
+	 background-size: no-repeat;
+	 background-position: center;
+	 background-size: cover;
+}
+
+table.inf{
+	background:whitesmoke;
+	border-spacing:3px;
+	padding:4px;
+	border: solid; border-color:#D35339;
+	border-collapse: collapse;
+	font-size:25px;
+}
+p{color:black}

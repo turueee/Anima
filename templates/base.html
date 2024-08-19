@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{{url_for('static',filename='CSS/base.css')}}" rel="stylesheet"/>
+    {% block title -%}
+    {% if title %}
+    <title>MEXA - {{title}}</title>
+    {% else %}
+    <title>Аниме жанра MEXA</title>
+    {% endif %}
+    {% endblock %}
+</head>
+<body>
+    {% block content -%}
+    {% block main -%}
+    <table class="hat">
+    <tr>
+        <th><a class = 'menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        <td><a class = 'menumexa' href={{url_for('mexa')}}>MEXA</a></td>
+    </tr>
+    </table>
+    {% endblock main -%}
+    {% if title %}
+    <center><h1>{{title}}</h1></center>
+    {% else %}
+    <center><h1>Аниме жанра MEXA</h1></center>
+    {% endif %}
+    <center>
+		<img src={{url_for('static',filename='pictures/logo/'~logo)}} height='286'>
+	</center>
+    {% block stmenu -%}
+    <center><h2>Об аниме</h2></center>
+    <table border='1' align="center" class="inf">
+        <tr>
+            <td rowspan='{{menu|length+1}}'><p>
+                {% if menu|length==1 %}
+                Студия
+                {% else %}
+                Студии
+                {% endif %}
+            </p></td>
+        </tr>
+        {% for m in menu -%}
+        <tr><td><p>{{m}}</p></td></tr>
+        {% endfor -%}
+        <tr>
+            <td><p>Режиссёр</p></td>
+            <td><p>{{rezh}}</p></td>
+        </tr>
+        <tr>
+            <td><p>Лицензиат в России</p></td>
+            <td><p>{{lic}}</p></td>
+        </tr>
+    </table>
+    {% endblock stmenu -%}
+
+    {% block oppening -%}
+        <center>
+		<h2>Оппенинг</h2>
+		<audio src={{url_for('static',filename='media/'~music)}}
+		autostart='true'
+		autoplay controls>
+		</audio>
+    </center>
+     {% endblock oppening -%}
+    {% endblock content -%}
+</body>
+</html>
