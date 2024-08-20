@@ -29,9 +29,9 @@ def Evangelion():
     return render_template('base.html',
                            menu=anistudio('Евангелион'),
                            title='Евангелион',
-                           infcharacter = infcharacters('Евангелион'),
-                           photocharacter = photocharacters('Евангелион'),
-                           groop = groopphoto('Евангелион'),
+                           infcharacter=infcharacters('Евангелион'),
+                           photocharacter=photocharacters('Евангелион'),
+                           groop=groopphoto('Евангелион'),
                            **aniinfo('Евангелион'))
 
 
