@@ -23,6 +23,7 @@ def mexa():
                            names=mexadatas()
                            )
 
+
 @app.route('/mex/<name>')
 def mex(name):
     return render_template('base.html',

@@ -20,7 +20,6 @@ def anistudio(studioname):
     return studios
 
 
-
 def aniinfo(studioname):
     info = dataconecter(
         f"SELECT director,ruslic, oppening, logo FROM about_anime WHERE engname = '{studioname}'"
@@ -43,5 +42,4 @@ def photocharacters(studioname):
 
 def groopphoto(studioname):
     groop = dataconecter(f"SELECT rusname FROM about_anime WHERE engname = '{studioname}'").fetchone()[0]
-    return(groop)
-
+    return (groop)
