@@ -28,7 +28,11 @@ table.inf{
 	padding:4px;
 	border: solid; border-color:#D35339;
 	border-collapse: collapse;
-	font-size:25px;
+	font-size:20px;
 }
-p{color:black}
-h2{color:black}
+p{color:black;
+font-size:30px}
+h3{color:black;
+font-size:50px}
+h2{color:black;
+font-size:60px}

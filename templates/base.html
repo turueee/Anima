@@ -65,13 +65,13 @@
     </center>
      {% endblock oppening -%}
     {% block characters -%}
-    <h2>Персонажи</h2>
+    <center><h2>Персонажи</h2></center>
     {% for name in infcharacter -%}
-    <h2>{{name}}</h2>
+    <center><h3>{{name}}</h3></center>
     <center>
 		<img src={{url_for('static',filename='pictures/'~groop~'/'~photocharacter[name])}} height='600'>
 	</center>
-    <p>{{infcharacter[name]}}<p>
+    <center><p>{{name}} - {{infcharacter[name]}}<p></center>
     {% endfor -%}
     {% endblock characters -%}
     {% endblock content -%}
