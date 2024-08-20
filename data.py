@@ -28,4 +28,19 @@ def aniinfo(studioname):
     return (dict(zip(placeholders, info)))
 
 
-print(aniinfo('Евангелион'))
+def infcharacters(studioname):
+    id = dataconecter(f"SELECT id_anime FROM about_anime WHERE rusname = '{studioname}'").fetchone()[0]
+    characters = dataconecter(f"SELECT name,information FROM character WHERE id_anime={id}").fetchall()
+    return (dict(characters))
+
+
+def photocharacters(studioname):
+    id = dataconecter(f"SELECT id_anime FROM about_anime WHERE rusname = '{studioname}'").fetchone()[0]
+    photocharacter = dataconecter(f"SELECT name,photo FROM character WHERE id_anime={id}").fetchall()
+    return (dict(photocharacter))
+
+
+def groopphoto(studioname):
+    groop = dataconecter(f"SELECT engname FROM about_anime WHERE rusname = '{studioname}'").fetchone()[0]
+    return(groop)
+
