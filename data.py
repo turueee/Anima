@@ -43,3 +43,8 @@ def photocharacters(studioname):
 def groopphoto(studioname):
     groop = dataconecter(f"SELECT rusname FROM about_anime WHERE engname = '{studioname}'").fetchone()[0]
     return (groop)
+
+
+def add_information_to_about_anime_database(rusnam, engnam, direct, russlic, id_genr):
+    dataconecter(
+        f"INSERT INTO about_anime ('rusname','engname','director','ruslic','id_genre') VALUES ('{rusnam}','{engnam}','{direct}','{russlic}',{id_genr})")

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление данных об аниме</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
+        <td><a class = 'menumexa' href={{url_for('create_about_anime')}}>Добавить</a></td>
+    </tr>
+</table>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+<form action="" method="post">
+    <p>
+        <label for="rusname">Название аниме</label>
+        <input type="text" name="rusname">
+    </p>
+    <p>
+        <label for="engname">engname</label>
+        <input type="text" name="engname">
+    </p>
+    <p>
+        <label for="director">Режиссер</label>
+        <input type="text" name="director">
+    </p>
+    <p>
+        <label for="ruslic">Лицензиат в России</label>
+        <input type="text" name="ruslic">
+    </p>
+    <p>
+        <label for="id_genre">ID жанра</label>
+        <input type="text" name="id_genre">
+    </p>
+    <p>
+    <input type="submit">
+    </p>
+</body>
+</html>
