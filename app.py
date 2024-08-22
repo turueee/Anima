@@ -3,16 +3,9 @@ from flask import render_template
 from flask import url_for
 from flask import request
 
-from data import mexadatas
-from data import anistudio
-from data import aniinfo
-from data import infcharacters
-from data import photocharacters
-from data import groopphoto
-from data import add_information_to_about_anime_database
-from data import add_information_to_character_database
-from data import add_information_to_id_genre_database
-from data import add_information_to_studio_database
+from data import mexadatas, anistudio, aniinfo, infcharacters, photocharacters, groopphoto, \
+    add_information_to_about_anime_database, add_information_to_character_database, \
+    add_information_to_id_genre_database, add_information_to_studio_database,all_genres
 
 app = Flask(__name__)
 
@@ -20,13 +13,16 @@ app = Flask(__name__)
 @app.route('/anima')
 @app.route("/")
 def Anima():
-    return render_template('anima.html')
+    return render_template('anima.html',
+                           genres=all_genres())
 
 
-@app.route('/mexa')
-def mexa():
+@app.route('/mexa/<name>')
+def mexa(name):
     return render_template('mexa.html',
-                           names=mexadatas()
+                           names=mexadatas(name),
+                           title=name,
+                           genres=all_genres()
                            )
 
 
@@ -38,7 +34,8 @@ def mex(name):
                            infcharacter=infcharacters(name),
                            photocharacter=photocharacters(name),
                            groop=name,
-                           **aniinfo(name))
+                           **aniinfo(name),
+                           genres=all_genres())
 
 
 @app.route('/create_about_anime/', methods=['post', 'get'])
@@ -59,8 +56,8 @@ def create_studio():
     message = ""
     if request.method == 'POST':
         studio = request.form.get('studio')
-        id_genre = request.form.get('engname')
-        add_information_to_studio_database(studio, id_genre)
+        id_anime = request.form.get('id_anime')
+        add_information_to_studio_database(studio, id_anime)
     return render_template('create_studio.html', message=message)
 
 

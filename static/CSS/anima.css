@@ -9,3 +9,21 @@ text-decoration:none
 }
 a.menumexa:hover{color:grey;
 text-decoration:none}
+
+body{
+	 background-image: linear-gradient(to right,#00FFFF,#b60aff,red);
+	 color:transparent;
+	 background-size: no-repeat;
+	 background-position: center;
+	 background-size: cover;
+}
+
+h2{color:black;
+font-size:40px}
+
+a.add{color:black;
+font-size:30px;
+text-decoration:none
+}
+a.add:hover{color:grey;
+text-decoration:none}

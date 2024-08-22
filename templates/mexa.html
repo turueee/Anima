@@ -9,13 +9,14 @@
 <table>
     <tr>
         <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
-        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
-        <td><a class = 'menumexa' href={{url_for('create_about_anime')}}>Добавить</a></td>
+        {% for gen in genres -%}
+        <td><a class='menumexa' href={{url_for('mexa',name=gen)}}>{{gen}}</a></td>
+        {% endfor -%}
     </tr>
 </table>
 <div class="out">
     <div class="in">
-        <center><h1>Аниме жанра меха</h1></center>
+        <center><h1>Аниме жанра {{title}}</h1></center>
         {% for rusname in names -%}
         <center><h2><a class='names' href={{url_for('mex',name=names[rusname])}}>{{rusname}}</a></h2></center>
         {% endfor -%}

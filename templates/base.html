@@ -14,13 +14,14 @@
 <body>
     {% block content -%}
     {% block main -%}
-    <table class="hat">
+<table>
     <tr>
-        <th><a class = 'menumexa' href={{url_for('Anima')}}>Anima</a></th>
-        <td><a class = 'menumexa' href={{url_for('mexa')}}>MEXA</a></td>
-
+        <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        {% for gen in genres -%}
+        <td><a class='menumexa' href={{url_for('mexa',name=gen)}}>{{gen}}</a></td>
+        {% endfor -%}
     </tr>
-    </table>
+</table>
     {% endblock main -%}
     {% if title %}
     <center><h1>{{title}}</h1></center>

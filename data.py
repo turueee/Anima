@@ -8,10 +8,15 @@ def dataconecter(query):
     return cur
 
 
-def mexadatas():
-    data = dataconecter("SELECT rusname,engname FROM about_anime")
+def mexadatas(genr):
+    id_gen = dataconecter(f"SELECT id_genre FROM id_genre WHERE genre='{genr}'").fetchone()[0]
+    data = dataconecter(f"SELECT rusname,engname FROM about_anime WHERE id_genre={id_gen}")
     return (dict(data.fetchall()))
 
+def all_genres():
+    genres = dataconecter("SELECT genre FROM id_genre").fetchall()
+    gen=[i[0] for i in genres]
+    return(gen)
 
 def anistudio(studioname):
     id = dataconecter(f"SELECT id_anime FROM about_anime WHERE engname = '{studioname}'").fetchone()[0]

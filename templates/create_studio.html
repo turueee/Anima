@@ -8,7 +8,6 @@
 <table>
     <tr>
         <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
-        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
     </tr>
 </table>
 {% if message %}
@@ -22,7 +21,7 @@
     </p>
     <p>
         <label for="id_anime">id_anime</label>
-        <input type="text" name="id_anime">
+        <input type="integer" name="id_anime">
     </p>
     <p>
     <input type="submit">
