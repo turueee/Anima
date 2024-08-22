@@ -48,3 +48,15 @@ def groopphoto(studioname):
 def add_information_to_about_anime_database(rusnam, engnam, direct, russlic, id_genr):
     dataconecter(
         f"INSERT INTO about_anime ('rusname','engname','director','ruslic','id_genre') VALUES ('{rusnam}','{engnam}','{direct}','{russlic}',{id_genr})")
+
+
+def add_information_to_id_genre_database(id_genr, genr):
+    dataconecter(f"INSERT INTO id_genre VALUES ({id_genr},'{genr}')")
+
+
+def add_information_to_character_database(nam, inform, id_anim):
+    dataconecter(f"INSERT INTO id_genre ('name','information','id_anime') VALUES ('{nam}','{inform}',{id_anim})")
+
+
+def add_information_to_studio_database(studi, id_anim):
+    dataconecter(f"INSERT INTO studio VALUES ('{studi}',{id_anim})")

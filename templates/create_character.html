@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление данных о персонаже</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
+    </tr>
+</table>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+<form action="" method="post">
+    <p>
+        <label for="name">Имя персонажа</label>
+        <input type="text" name="name">
+    </p>
+    <p>
+        <label for="id_anime">id_anime</label>
+        <input type="text" name="id_anime">
+    </p>
+    <p>
+        <label for="information">Информация о персонаже</label>
+        <input type="text" name="information">
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</body>
+</html>

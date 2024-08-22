@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление данных о жанре аниме</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th><a class='menumexa' href={{url_for('Anima')}}>Anima</a></th>
+        <td><a class='menumexa' href={{url_for('mexa')}}>MEXA</a></td>
+    </tr>
+</table>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+<form action="" method="post">
+    <p>
+        <label for="id_genre">id жанра</label>
+        <input type="text" name="id_genre">
+    </p>
+    <p>
+        <label for="genre">Жанр</label>
+        <input type="text" name="genre">
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</body>
+</html>
